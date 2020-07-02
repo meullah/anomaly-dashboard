@@ -3,8 +3,8 @@ import { Grid } from "@material-ui/core";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
 // import Select from "react-select";
-import LineCust from "../Charts/LineCust";
-import BarStacked from "../Charts/BarStacked";
+// import LineCust from "../Charts/LineCust";
+// import BarStacked from "../Charts/BarStacked";
 import ChartCard from "../Cards/ChartCard";
 
 export default class doctorsChart extends Component {

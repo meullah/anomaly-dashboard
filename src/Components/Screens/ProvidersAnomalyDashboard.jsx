@@ -4,10 +4,6 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import ChartCard from "../Cards/ChartCard";
 
 export default class doctorsChart extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div style={{ padding: "15px", marginTop: "40px" }}>
