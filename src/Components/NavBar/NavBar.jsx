@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { withStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
+// import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import Avatar from "@material-ui/core/Avatar";
@@ -132,16 +132,6 @@ class NavBar extends Component {
                 </Grid>
                 <Grid item>
                   <Avatar src="/broken-image.jpg" className={classes.avatar} />
-                </Grid>
-                <Grid item>
-                  <Typography
-                    className={classes.typography}
-                    variant="subtitle2"
-                    color="textPrimary"
-                    display="inline"
-                  >
-                    Hi, Analyst
-                  </Typography>
                 </Grid>
               </Grid>
             </Grid>
