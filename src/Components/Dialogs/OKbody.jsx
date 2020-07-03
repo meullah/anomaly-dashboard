@@ -7,7 +7,7 @@ import CheckCircleOutlineIcon from "@material-ui/icons/CheckCircleOutline";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 
-const body = props => (
+const body = (props) => (
   <>
     <Grid
       container
@@ -20,7 +20,7 @@ const body = props => (
         <CheckCircleOutlineIcon
           style={{
             width: 200,
-            height: 200
+            height: 200,
             // fill: "yellow"
           }}
         />
@@ -28,7 +28,7 @@ const body = props => (
       {/* <img src={logo} alt="Logo" /> */}
       <Grid item xs={12}>
         <DialogTitle style={{ cursor: "move" }} id="draggable-dialog-title">
-          <Typography>
+          <Typography component="div">
             <Box fontSize={32} fontWeight="fontWeightBold" lineHeight={0}>
               Success!
             </Box>
@@ -37,7 +37,7 @@ const body = props => (
       </Grid>
 
       <Grid item xs={12}>
-        <Typography>
+        <Typography component="div">
           <Box fontSize={16} fontWeight="fontWeightRegular" lineHeight={2}>
             Your response was submitted successfully!
           </Box>

@@ -12,7 +12,7 @@ export default class doctorsChart extends Component {
           <Grid container spacing={1}>
             <Grid item xs={8}>
               <ChartCard
-                title="Percentage Anomalies"
+                title="Anomalies Per Month"
                 chart="BarGrouped"
                 url="http://localhost:5000/HMA"
               />
@@ -45,7 +45,7 @@ export default class doctorsChart extends Component {
 
             <Grid item xs={6}>
               <ChartCard
-                title="Disgnosis to Procedure Anomalies"
+                title="Diagnosis to Procedure Anomalies"
                 url="http://localhost:5000/HDPA"
                 chart="stackedBarData_2"
               />

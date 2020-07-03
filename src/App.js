@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
 import PatientAnomalyDashboard from "./Components/Screens/PatientAnomalyDashboard";
 import ProvidersAnomalyDashboard from "./Components/Screens/ProvidersAnomalyDashboard";
 import NavBar from "./Components/NavBar/NavBar";
-
+import axios from "axios";
 import "./styles.css";
 
 export default function App() {
@@ -13,9 +13,17 @@ export default function App() {
     set_patient_id(handle.target.value);
     // return <PatientAnomalyDashboard patient_id={handle.target.value} />;
   };
-  // {
-  //   console.log(patient_id);
-  // }
+
+  useEffect(() => {
+    async function getData() {
+      const res_patient_ids = await axios.get(
+        "http://localhost:5000/generateanomalies"
+      );
+      console.log("anomalies generated", res_patient_ids);
+    }
+    getData();
+  }, []);
+
   return (
     <div className="App" style={{ height: "100%" }}>
       <NavBar callback_func={patient_id_changed} />

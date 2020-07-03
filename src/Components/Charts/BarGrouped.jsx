@@ -98,6 +98,15 @@ export default class BarGrouped extends Component {
       .catch((error) => {
         console.log(error);
       });
+
+    fetch("http://localhost:5000/generateanomalies")
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {})
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
   render() {

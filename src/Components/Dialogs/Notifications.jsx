@@ -13,7 +13,7 @@ import Loader from "../Loader/Loader";
 
 // const POST_API_3 = "https://jsonplaceholder.typicode.com/posts";
 const POST_API_1 = "http://localhost:5000/performedAction";
-const POST_API_2 = "https://jsonplaceholder.typicode.com/posts";
+const GET_NOTIFICATIONS = "http://localhost:5000/getnotifications";
 
 function PaperComponent(props) {
   return (
@@ -52,7 +52,7 @@ class NotificationMenu extends React.Component {
   }
 
   async componentDidMount() {
-    await fetch("https://jsonplaceholder.typicode.com/posts")
+    await fetch(GET_NOTIFICATIONS)
       .then((res) => res.json())
       .then((data) => this.setState({ anomalies: data, isLoaded: true }))
       .catch((error) => console.log(error));
@@ -77,29 +77,31 @@ class NotificationMenu extends React.Component {
       open: false,
       openreason: false,
       openok: false,
+      isLoaded: false,
     });
   };
 
-  getDetailsData = async () => {
-    await fetch(POST_API_2)
-      .then((res) => res.json())
-      .then((json) =>
-        this.setState({
-          description: json[0].body,
-          isLoaded: true,
-        })
-      )
-      .catch((error) => console.log(error));
-  };
+  // getDetailsData = async () => {
+  //   await fetch(POST_API_2)
+  //     .then((res) => res.json())
+  //     .then((json) =>
+  //       this.setState({
+  //         description: json[0].body,
+  //         isLoaded: true,
+  //       })
+  //     )
+  //     .catch((error) => console.log(error));
+  // };
 
-  onItemClick = (num, id) => {
-    this.getDetailsData();
-
+  onItemClick = (num, id, description) => {
+    // this.getDetailsData();
+    console.log("Description ", this.state.anomalies);
     this.setState((st) => ({
       open: true,
       anchorEl: null,
       openMRS_no: num,
       anomaly_id: id,
+      description: description,
       explanation: {
         accept: "",
         pend: "",
@@ -189,8 +191,9 @@ class NotificationMenu extends React.Component {
     const anomalylist = this.state.anomalies.map((anomaly) => (
       <MenuItemWrapper
         onItemClick={this.onItemClick}
-        id={anomaly.id}
-        number={anomaly.userId}
+        id={anomaly.Patient_ID}
+        number={anomaly.ID}
+        description={anomaly.Description}
       >
         <Typography component="div">
           <Box
@@ -199,7 +202,7 @@ class NotificationMenu extends React.Component {
             fontWeight="fontWeightBold"
             fontSize="caption.fontSize"
           >
-            Patient MR Number :{anomaly.id}
+            Patient MR Number :{anomaly.Patient_ID}
           </Box>
           <Box textAlign="left" m={0} lineHeight={1} fontSize={11}>
             1 Anomaly Detected
@@ -240,7 +243,7 @@ class NotificationMenu extends React.Component {
             },
           }}
         >
-          <Typography variant="h7">
+          <Typography component="div">
             <Box
               textAlign="left"
               m={2}
@@ -260,21 +263,17 @@ class NotificationMenu extends React.Component {
             handleClose={this.handleDialogClose}
             PaperComponent={PaperComponent}
           >
-            {!this.state.isLoaded ? (
-              <Loader />
-            ) : (
-              <Descriptionbody
-                isLoaded={this.state.isLoaded}
-                num={this.state.openMRS_no}
-                time={this.state.time}
-                details={this.state.description}
-                date={this.state.date}
-                handleChange={this.handleChange}
-                handleAccept={this.handleAccept}
-                handlePend={this.handlePend}
-                handleReject={this.handleReject}
-              />
-            )}
+            <Descriptionbody
+              isLoaded={this.state.isLoaded}
+              num={this.state.openMRS_no} // actulally patient ID
+              time={this.state.time}
+              details={this.state.description}
+              date={this.state.date}
+              handleChange={this.handleChange}
+              handleAccept={this.handleAccept}
+              handlePend={this.handlePend}
+              handleReject={this.handleReject}
+            />
           </Dialog>
         )}
         {this.state.openreason && (

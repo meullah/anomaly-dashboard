@@ -20,7 +20,7 @@ export default class DChart extends Component {
       },
       options: {
         maintainAspectRatio: false,
-        responsive: true,
+        responsive: false,
         legend: {
           display: false,
         },
@@ -54,13 +54,14 @@ export default class DChart extends Component {
         return response.json();
       })
       .then((data) => {
-        console.log(data.data);
+        console.log("data of dougnt chart", data.data);
         let perviousStates = this.state.data.datasets[0];
         perviousStates.data = data.data;
         let sum = data.data.reduce((a, b) => a + b, 0);
         let options = this.state.options.plugins.doughnutlabel.labels[0];
         options.text = sum.toString();
-        // this.setState({ perviousStates });
+        this.setState({ perviousStates });
+        this.setState({ options });
       })
       .catch((error) => {
         console.log(error);
@@ -68,6 +69,12 @@ export default class DChart extends Component {
   }
 
   render() {
-    return <Doughnut data={this.state.data} options={this.state.options} />;
+    return (
+      <Doughnut
+        data={this.state.data}
+        options={this.state.options}
+        height="215%"
+      />
+    );
   }
 }

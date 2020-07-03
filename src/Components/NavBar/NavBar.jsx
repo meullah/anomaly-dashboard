@@ -131,7 +131,7 @@ class NavBar extends Component {
                   <AddRule />
                 </Grid>
                 <Grid item>
-                  <Avatar src="/broken-image.jpg" classname={classes.avatar} />
+                  <Avatar src="/broken-image.jpg" className={classes.avatar} />
                 </Grid>
                 <Grid item>
                   <Typography

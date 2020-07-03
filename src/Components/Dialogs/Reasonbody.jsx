@@ -8,7 +8,7 @@ import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import Box from "@material-ui/core/Box";
 
-const body = props => (
+const body = (props) => (
   <>
     <Grid
       container
@@ -19,7 +19,7 @@ const body = props => (
     >
       <Grid item xs={12}>
         <DialogTitle style={{ cursor: "move" }} id="draggable-dialog-title">
-          <Typography>
+          <Typography component="div">
             <Box fontSize={16} fontWeight="fontWeightBold" lineHeight={0}>
               Reason
             </Box>
