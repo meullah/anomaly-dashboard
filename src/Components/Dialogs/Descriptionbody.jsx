@@ -54,7 +54,7 @@ const body = (props) => (
         <TextField
           style={{ width: "100%" }}
           label=""
-          disabled
+          // disabled
           multiline
           value={props.details}
           rows={5}

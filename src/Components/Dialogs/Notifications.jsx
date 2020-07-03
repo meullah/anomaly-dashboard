@@ -9,7 +9,7 @@ import Dialog from "./Dialog";
 import Badge from "@material-ui/core/Badge";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import IconButton from "@material-ui/core/IconButton";
-import Loader from "../Loader/Loader";
+// import Loader from "../Loader/Loader";
 
 // const POST_API_3 = "https://jsonplaceholder.typicode.com/posts";
 const POST_API_1 = "http://localhost:5000/performedAction";
@@ -93,15 +93,19 @@ class NotificationMenu extends React.Component {
   //     .catch((error) => console.log(error));
   // };
 
-  onItemClick = (num, id, description) => {
+  onItemClick = (num, id, description, anomalyOn, type) => {
     // this.getDetailsData();
+    type = type === "SD" ? "Symptom to Diagnosis" : "Diagnosis to Procedure";
+    let data = `Anomaly on => ${anomalyOn}  
+Type => ${type} 
+Description => ${description} `;
     console.log("Description ", this.state.anomalies);
     this.setState((st) => ({
       open: true,
       anchorEl: null,
       openMRS_no: num,
       anomaly_id: id,
-      description: description,
+      description: data,
       explanation: {
         accept: "",
         pend: "",
@@ -194,6 +198,8 @@ class NotificationMenu extends React.Component {
         id={anomaly.Patient_ID}
         number={anomaly.ID}
         description={anomaly.Description}
+        anomalyOn={anomaly.Anomaly_On}
+        type={anomaly.Type}
       >
         <Typography component="div">
           <Box

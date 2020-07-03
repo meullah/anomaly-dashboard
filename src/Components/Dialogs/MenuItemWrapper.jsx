@@ -6,7 +6,9 @@ class MenuItemWrapper extends Component {
     this.props.onItemClick(
       this.props.id,
       this.props.number,
-      this.props.description
+      this.props.description,
+      this.props.anomalyOn,
+      this.props.type
     );
   };
   render() {
