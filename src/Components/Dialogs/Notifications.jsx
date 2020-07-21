@@ -180,13 +180,14 @@ Description => ${description} `;
         reason: this.state.reason,
       }),
     }).then((res) => {
-      if (res.status !== 200) {
-        console.log(res.data);
-      } else {
-        res.json().then((data) => {
-          console.log(data);
-        });
-      }
+      // if (res.status !== 200) {
+      console.log(res);
+      window.location.reload(false);
+      // } else {
+      //   res.json().then((data) => {
+      //     console.log("else statement", res);
+      //   });
+      // }
     });
   };
   render() {
@@ -201,7 +202,7 @@ Description => ${description} `;
         anomalyOn={anomaly.Anomaly_On}
         type={anomaly.Type}
       >
-        <Typography component="div">
+        <div>
           <Box
             textAlign="justify"
             m={0}
@@ -213,7 +214,7 @@ Description => ${description} `;
           <Box textAlign="left" m={0} lineHeight={1} fontSize={11}>
             1 Anomaly Detected
           </Box>
-        </Typography>
+        </div>
       </MenuItemWrapper>
     ));
     // const { classes } = this.props;
@@ -245,7 +246,7 @@ Description => ${description} `;
           }}
           PaperProps={{
             style: {
-              width: "270px",
+              width: "fit-content",
             },
           }}
         >

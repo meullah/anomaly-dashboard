@@ -40,7 +40,7 @@ export default class LineCust extends Component {
             pointHoverBorderWidth: 2,
             pointRadius: 1,
             pointHitRadius: 10,
-            data: [65, 59, 80, 81, 56, 59, 45, 150, 2, 54, 88, 23],
+            data: [65, 59, 80, 81, 56, 55, 40, 80, 81, 56, 55, 100],
           },
         ],
       },

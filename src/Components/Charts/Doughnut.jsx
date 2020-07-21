@@ -11,7 +11,7 @@ export default class DChart extends Component {
         datasets: [
           {
             label: "# of Likes",
-            data: [12, 19, 3],
+            data: [],
             backgroundColor: ["#2E5BFF", "#2CC2A5", "#8C54FF"],
             hoverBorderColor: ["#2E5BFF", "#2CC2A5", "#8C54FF"],
             hoverBorderWidth: 2,
@@ -29,7 +29,7 @@ export default class DChart extends Component {
           doughnutlabel: {
             labels: [
               {
-                text: "102",
+                text: "",
                 font: {
                   size: "150",
                   family: "Poppins",

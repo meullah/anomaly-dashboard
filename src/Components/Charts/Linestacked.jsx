@@ -23,7 +23,7 @@ const data = {
       pointHoverBorderWidth: 2,
       pointRadius: 1,
       pointHitRadius: 10,
-      data: [65, 59, 80, 81, 56, 55, 40]
+      data: [],
     },
     {
       label: "My Second dataset",
@@ -44,9 +44,9 @@ const data = {
       pointHoverBorderWidth: 2,
       pointRadius: 1,
       pointHitRadius: 10,
-      data: [55, 49, 70, 71, 46, 45, 30]
-    }
-  ]
+      data: [],
+    },
+  ],
 };
 
 const options = {
@@ -55,8 +55,8 @@ const options = {
   cornerRadius: 80,
   barValueSpacing: 10,
   legend: {
-    display: false
-  }
+    display: false,
+  },
 };
 
 export default class LineStacked extends Component {

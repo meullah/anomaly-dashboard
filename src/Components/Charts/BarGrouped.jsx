@@ -31,7 +31,7 @@ export default class BarGrouped extends Component {
             barThickness: "flex",
             hoverBackgroundColor: "#2E5BFF",
             hoverBorderColor: "#2E5BFF",
-            data: [65, 59, 80, 81, 56, 59, 45, 150, 2, 54, 88, 23],
+            data: [],
           },
 
           {
@@ -42,7 +42,7 @@ export default class BarGrouped extends Component {
             barThickness: "flex",
             hoverBackgroundColor: "#2CC2A5",
             hoverBorderColor: "#2CC2A5",
-            data: [45, 79, 50, 41, 16, 45, 23, 78, 56, 12, 32, 12],
+            data: [],
           },
 
           {
@@ -53,7 +53,7 @@ export default class BarGrouped extends Component {
             barThickness: "flex",
             hoverBackgroundColor: "#8C54FF",
             hoverBorderColor: "#8C54FF",
-            data: [35, 99, 100, 61, 6, 65, 59, 80, 81, 56, 45, 79],
+            data: [],
           },
         ],
       },
