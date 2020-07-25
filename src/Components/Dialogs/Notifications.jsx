@@ -54,7 +54,9 @@ class NotificationMenu extends React.Component {
   async componentDidMount() {
     await fetch(GET_NOTIFICATIONS)
       .then((res) => res.json())
-      .then((data) => this.setState({ anomalies: data, isLoaded: true }))
+      .then((data) =>
+        this.setState({ anomalies: data.reverse(), isLoaded: true })
+      )
       .catch((error) => console.log(error));
   }
   // getDataFromApi = () => {
